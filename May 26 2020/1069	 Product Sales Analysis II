@@ -1,0 +1,5 @@
+# # Write your MySQL query statement below
+Select s.product_id, sum(quantity) as total_quantity
+from Sales s
+group by product_id
+#计算总数用sum，计算出现次数用count
