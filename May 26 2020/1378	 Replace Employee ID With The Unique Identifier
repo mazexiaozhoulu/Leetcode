@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+select e.name,u.unique_id
+from Employees e
+left join EmployeeUNI u on e.id=u.id
+#select选择的是要做出来的表格的title；left join 选择的是左边有的，左边有右边没有就是null
