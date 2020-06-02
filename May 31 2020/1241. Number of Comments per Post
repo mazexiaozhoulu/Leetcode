@@ -1,0 +1,18 @@
+select distinct
+(sub_id) as post_id,
+   (
+      select
+         count(distinct(sub_id)) 
+      from
+         submissions 
+      where
+         parent_id is not null 
+         and parent_id = post_id
+   )
+   as number_of_comments 
+from
+   submissions 
+where
+   parent_id is Null 
+order by
+   post_id;
