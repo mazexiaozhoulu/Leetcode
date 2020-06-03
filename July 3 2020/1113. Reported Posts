@@ -1,0 +1,20 @@
+# Write your MySQL query statement below
+select 
+    extra as report_reason,
+    count(distinct post_id) as report_count 
+from
+    Actions
+where
+    action_date = '2019-07-04'
+and
+    action='report'
+group by 
+    extra
+
+
+#  user_id | post_id | action_date | action | extra  |
+# +---------+---------+-------------+--------+--------+
+# | 2       | 4       | 2019-07-04  | report | spam   |
+# | 3       | 4       | 2019-07-04  | report | spam   |
+# | 5       | 2       | 2019-07-04  | report | racism |
+# | 5       | 5       | 2019-07-04  | report | racism |
