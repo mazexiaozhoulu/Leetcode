@@ -1,0 +1,4 @@
+select a.Id
+from Weather a left join Weather b 
+on a.RecordDate = adddate(b.RecordDate,1)
+where a.Temperature>b.Temperature;
