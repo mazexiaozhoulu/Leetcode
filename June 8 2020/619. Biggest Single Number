@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+#先把表格group by，然后选出来count=1的。在选出来最大的
+select max(num)as num
+from (
+    select num
+    from my_numbers
+     group by num
+      having count(*)=1) as t
