@@ -1,0 +1,6 @@
+
+select ifnull(round(avg(tem.a),2),0) as average_sessions_per_user from
+(select count(distinct(s.session_id)) as a
+from Activity s
+where s.activity_date between '2019-06-28' and '2019-07-27'
+group by user_id) tem
